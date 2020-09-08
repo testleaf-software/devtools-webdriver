@@ -3,7 +3,7 @@
 	<groupId>com.testleaf</groupId>
 	<artifactId>devtools-webdriver</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>com.testleaf:devtools-webdriver</name>
 	<description>A declarative, efficient, and flexible Java library for integrating Chrome DevTools with Selenium WebDriver</description>
 	<url>https://github.com/testleaf-software/devtools-webdriver</url>
@@ -23,9 +23,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:svn:https://github.com/testleaf-software/devtools-webdriver</connection>
-		<developerConnection>scm:svn:https://github.com/testleaf-software/devtools-webdriver</developerConnection>
-		<url>https://github.com/testleaf-software/devtools-webdriver</url>
+		<connection>scm:svn:https://github.com/testleaf-software/devtools-webdriver/tags/head</connection>
+		<developerConnection>scm:svn:https://github.com/testleaf-software/devtools-webdriver/tags/head</developerConnection>
+		<url>https://github.com/testleaf-software/devtools-webdriver/tags/head</url>
 		<tag>head</tag>
 	</scm>
 	<properties>
