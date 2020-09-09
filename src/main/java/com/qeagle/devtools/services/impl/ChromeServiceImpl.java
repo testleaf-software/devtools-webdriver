@@ -158,7 +158,7 @@ public class ChromeServiceImpl implements ChromeService {
   @Override
   public synchronized ChromeDevToolsService createDevToolsService() throws ChromeServiceException {
 	  List<ChromeTab> tabs = getTabs();
-	  return createDevToolsService(tabs.get(1), new ChromeDevToolsServiceConfiguration());
+	  return createDevToolsService(tabs.get(tabs.size()-1), new ChromeDevToolsServiceConfiguration());
   }
 
   @Override

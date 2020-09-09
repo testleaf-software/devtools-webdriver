@@ -125,7 +125,6 @@ public interface Network {
    * @param authChallengeResponse Response to a requestIntercepted with an authChallenge. Must not
    *     be set otherwise.
    */
-  @Deprecated
   @Experimental
   void continueInterceptedRequest(
       @ParamName("interceptionId") String interceptionId,
@@ -417,7 +416,6 @@ public interface Network {
    * @param patterns Requests matching any of these patterns will be forwarded and wait for the
    *     corresponding continueInterceptedRequest call.
    */
-  @Deprecated
   @Experimental
   void setRequestInterception(@ParamName("patterns") List<RequestPattern> patterns);
 
@@ -443,7 +441,6 @@ public interface Network {
    * mocked. Deprecated, use Fetch.requestPaused instead.
    */
   @EventName("requestIntercepted")
-  @Deprecated
   @Experimental
   EventListener onRequestIntercepted(EventHandler<RequestIntercepted> eventListener);
 

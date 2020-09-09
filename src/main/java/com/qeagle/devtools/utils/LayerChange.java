@@ -19,6 +19,7 @@ public class LayerChange {
 					System.out.println("Waiting ... ");
 				});
 		waitForThreadsToComplete();
+		System.out.println("Done");
 	}
 
 
@@ -39,8 +40,13 @@ public class LayerChange {
 	}
 	
 	public static LayerTree disableLayers(ChromeDevToolsService devToolsService) {
-		LayerTree layers = devToolsService.getLayerTree();
-		layers.disable();
+		LayerTree layers = null;
+		try {
+			layers = devToolsService.getLayerTree();
+			layers.disable();
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+		}
 		return layers;
 	}
 

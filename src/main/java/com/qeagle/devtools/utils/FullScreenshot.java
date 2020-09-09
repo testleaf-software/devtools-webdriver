@@ -5,16 +5,22 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Base64;
 
+import org.openqa.selenium.WebDriver;
+
 import com.qeagle.devtools.protocol.commands.Emulation;
 import com.qeagle.devtools.protocol.types.page.CaptureScreenshotFormat;
 import com.qeagle.devtools.protocol.types.page.LayoutMetrics;
 import com.qeagle.devtools.protocol.types.page.Viewport;
 import com.qeagle.devtools.services.ChromeDevToolsService;
+import com.qeagle.devtools.webdriver.DevToolsService;
 
 public class FullScreenshot {
 	
-	public static void captureFullPageScreenshot(
-			ChromeDevToolsService devToolsService, String outputFilename) {
+	public static void captureFullPage(
+			WebDriver driver, String outputFilename) {
+		
+		ChromeDevToolsService devToolsService = DevToolsService.getDevToolsService(driver);
+
 		final LayoutMetrics layoutMetrics = devToolsService.getPage().getLayoutMetrics();
 
 		final double width = layoutMetrics.getContentSize().getWidth();
@@ -38,6 +44,8 @@ public class FullScreenshot {
 		storeAsFile(
 				outputFilename,
 				devToolsService.getPage().captureScreenshot(CaptureScreenshotFormat.PNG, 100, viewport, Boolean.TRUE));
+	
+		driver.navigate().refresh();
 	}
 
 	

@@ -33,7 +33,7 @@ import java.util.Map;
  * mocked. Deprecated, use Fetch.requestPaused instead.
  */
 @Experimental
-@Deprecated
+
 public class RequestIntercepted {
 
   private String interceptionId;
